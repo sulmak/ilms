@@ -1,6 +1,7 @@
 {% extends "master.html" %}
 
 {% block content %}
+
 <h1>{{ book.title }}</h1>
 
 {% if book.cover and book.cover.name %}
@@ -10,4 +11,7 @@
 {% else %}
     <p>No cover uploaded</p>
 {% endif %}
+<div>    
+    <a class="btn btn-primary" href="/">BACK</a>
+</div>
 {% endblock %}

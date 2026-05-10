@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'catalog',
     'accounts',
     'circulation',
-    'booklocation',
 ]
 
 MIDDLEWARE = [
