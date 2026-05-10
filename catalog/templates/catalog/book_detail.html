@@ -1,0 +1,13 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+
+{% if book.cover and book.cover.name %}
+    <img src="{{ book.cover.url }}" alt="{{ book.title }}" width="200">
+    <p>URL: {{ book.cover.url }}</p>
+    <p>Path: {{ book.cover.path }}</p>
+{% else %}
+    <p>No cover uploaded</p>
+{% endif %}
+{% endblock %}

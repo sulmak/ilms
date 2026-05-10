@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+{% block content %}
+<h1>Book Catalog</h1>
+<form method="get" class="mb-4">
+  <input name="q" class="form-control" placeholder="Search title, author, ISBN..." value="{{ request.GET.q }}">
+</form>
+
+<div class="row">
+  {% for book in book_list %}
+    {% include "catalog/partials/book_card.html" %} <!-- Django 6 template partials -->
+  {% empty %}
+    <p>No books found.</p>
+  {% endfor %}
+</div>
+{% include "catalog/partials/pagination.html" %}
+{% endblock %}

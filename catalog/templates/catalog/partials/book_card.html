@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+{% block content %}
+<div class="col-md-3 mb-4">
+  <div class="card h-100">
+    {% if book.cover %}
+      <img src="{{ book.cover.url }}" class="card-img-top" style="height: 300px; object-fit: cover;">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ book.title }}</h5>
+      <p class="card-text text-muted">{{ book.author }}</p>
+      <p><span class="badge bg-success">{{ book.available_copies }}/{{ book.total_copies }} available</span></p>
+      <a href="{{ book.get_absolute_url }}" class="btn btn-primary btn-sm">Details</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
